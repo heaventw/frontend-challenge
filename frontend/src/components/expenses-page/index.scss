@@ -1,0 +1,39 @@
+@import '../styleguide/variables.scss';
+.App {
+  display: flex;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: calc(100% - #{$nav-width});
+  margin-left: $nav-width;
+}
+
+.left {
+  width: 50%;
+  border-right: 1px solid #ccc;
+  position: relative;
+  min-height: 100vh;
+}
+
+.right {
+  width: 50%;
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .container {
+    
+    width: calc(100% - #{$nav-width-mobile-collapsed});
+    margin-left: $nav-width-mobile-collapsed;
+    flex-direction: column;
+    & > * {
+      width: 100%;
+      border: none;
+    }
+  }
+  .right {
+    display: none;
+  }
+}

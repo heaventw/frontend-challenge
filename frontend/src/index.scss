@@ -1,0 +1,35 @@
+@import-normalize;
+@import './components/styleguide/variables.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $clr-primary;
+  text-decoration: underline;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.btn--primary {
+  color: $clr-white !important;
+  background-color: $clr-primary;
+  border-radius: 31px;
+  padding: 10px 23px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}

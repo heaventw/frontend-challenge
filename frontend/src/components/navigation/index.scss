@@ -1,0 +1,120 @@
+@import '../styleguide/variables.scss';
+
+.navigation {
+  position: fixed;
+  padding: 20px;
+  text-align: left;
+  background-color: $clr-white;
+  height: 100%;
+  width: $nav-width;
+  background-color: $clr-selected-bg;
+  min-height: 100vh;
+}
+
+.navigation__home-link {
+  display: block;
+}
+
+.navigation__logo {
+  display: block;
+  max-width: 75px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.navigation__user-photo {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 70px auto 0;
+}
+
+.navigation__user-name {
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.navigation__toggle-btn {
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+  left: 10px;
+  top: 7px;
+  display: none;
+}
+
+.navigation__user-contacts {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation__user-contact {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 24px;
+  svg {
+    color: #777;
+  }
+}
+
+.navigation__user-contact + .navigation__user-contact {
+  margin-left: 5px;
+}
+
+.navigation__user-email-icon {
+  margin-top: 5px;
+  display: inline-block;
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .navigation {
+    width: $nav-width-mobile-collapsed;
+    overflow: hidden;
+    padding: 0;
+    box-shadow: none;
+    & > * {
+      display: none;
+    }
+    .navigation__toggle-btn {
+      display: block;
+      left: 0;
+    }
+  }
+  @keyframes drawer {
+    from {
+      left: -200px;
+    }
+    to {
+      left: 0;
+    }
+  }
+  .navigation__toggle-btn {
+    display: block;
+    padding: 0;
+  }
+  .navigation--expanded {
+    padding: 5px 20px;
+    width: $nav-width-mobile;
+    z-index: 2;
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
+    animation: drawer 0.2s linear;
+    & > * {
+      display: block;
+    }
+    .navigation__toggle-btn {
+      position: fixed;
+    }
+    .navigation__user-contacts {
+      display: flex;
+    }
+  }
+}

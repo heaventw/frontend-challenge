@@ -1,0 +1,62 @@
+@import '../styleguide/variables';
+
+.file-upload {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-upload__label {
+  $size: 150px;
+  display: block;
+  width: $size;
+  height: $size;
+  background-color: #fafafa;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 20px;
+  position: relative;
+  cursor: pointer;
+  &:after {
+    $size: 50px;
+    display: block;
+    content: '+';
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    background-color: $clr-white;
+    color: $clr-highlight;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -$size/2;
+    margin-left: -$size/2;
+    line-height: $size;
+    font-size: 2rem;
+    box-shadow: 0 3px 3px -1px rgba(10, 22, 70, 0.1),
+      0 0 1px 0 rgba(10, 22, 70, 0.06);
+    transition: all 0.1s linear;
+  }
+  &:hover:after {
+    box-shadow: $shadow-elevate;
+  }
+}
+
+.file-upload__label--uploading {
+  &:after {
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

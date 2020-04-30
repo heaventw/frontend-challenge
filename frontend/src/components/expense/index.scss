@@ -1,0 +1,102 @@
+@import '../styleguide/variables';
+
+$amount-width: 100px;
+$logo-size: 50px;
+$logo-margin: 20px;
+
+.expense {
+  padding: 20px;
+  border-radius: 5px;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  &:hover {
+    background-color: $clr-selected-bg;
+  }
+  &:focus-within {
+    background-color: $clr-selected-bg;
+    box-shadow: $shadow-elevate;
+    a:focus {
+      outline: none;
+      text-decoration: underline;
+    }
+    .expense__merchant:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.expense--active {
+  background-color: $clr-selected-bg;
+  box-shadow: $shadow-elevate;
+  z-index: 1;
+  position: relative;
+  transform: translate(30px, 0);
+}
+
+.expense__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.expense_logo {
+  width: $logo-size;
+  height: $logo-size;
+  line-height: $logo-size;
+  color: $clr-white;
+  font-size: 22px;
+  border-radius: 50%;
+  margin-right: $logo-margin;
+  text-align: center;
+}
+
+.expense__info {
+  width: calc(100% - #{$logo-size} - #{$logo-margin} - #{$amount-width});
+}
+
+.expense__merchant {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  margin-top: 0;
+  text-transform: capitalize;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.expense__amount {
+  font-size: 1.1rem;
+  width: $amount-width;
+  text-align: right;
+}
+
+.expense__user {
+  font-size: 0.8rem;
+  text-decoration: none;
+  position: relative;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.expense__comment {
+  border-left: 2px solid $clr-highlight;
+  margin-bottom: 0;
+  padding: 10px;
+  word-break: break-all;
+  line-height: 1.5;
+  &:empty {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .expense--active {
+    background-color: $clr-selected-bg;
+    box-shadow: $shadow-elevate;
+    z-index: 1;
+    transform: translate(0, 0);
+  }
+}

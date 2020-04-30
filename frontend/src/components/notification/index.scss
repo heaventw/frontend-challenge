@@ -1,0 +1,52 @@
+@import '../styleguide/variables';
+
+$close-width: 30px;
+$bottom: 10px;
+$height: 40px;
+
+.notification {
+  position: fixed;
+  line-height: 1.5;
+  bottom: $bottom;
+  right: 10px;
+  padding: 10px 40px 10px 10px;
+  border-radius: 4px;
+  box-shadow: $shadow-elevate;
+  animation: slideUp 0.2s linear;
+}
+
+@keyframes slideUp {
+  0% {
+    bottom: -$height;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    bottom: $bottom;
+  }
+}
+
+.notification--error {
+  background-color: $clr-danger;
+  color: $clr-white;
+}
+
+.notification__close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: $clr-white;
+  font-size: 2rem;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  height: $height;
+  vertical-align: middle;
+  line-height: $height;
+  margin-top: -3px;
+}
+
+.notification__message {
+  margin: 0;
+}

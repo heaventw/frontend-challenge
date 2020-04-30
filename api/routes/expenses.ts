@@ -49,7 +49,7 @@ router.post('/:id', (req, res) => {
   const expense = expenses.find((expense) => expense.id === req.params.id)
 
   if (expense) {
-    expense.comment = req.body.comment || expense.comment
+    expense.comment = req.body.comment;
     res.status(200).send(expense)
   } else {
     res.status(404)

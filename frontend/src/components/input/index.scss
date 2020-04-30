@@ -1,0 +1,52 @@
+$icon-width: 21px;
+$icon-margin-right: 10px;
+$transition: all 0.3s linear;
+
+.input__label {
+  display: block;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  transition: $transition;
+  &:focus-within {
+    border-bottom: 1px solid #4790e5;
+    .search__icon {
+      color: #333;
+    }
+  }
+}
+
+.input__prefix-icon,
+.input__suffix-icon {
+  display: inline-block;
+  width: $icon-width;
+  color: #999;
+  font-size: 1.5rem;
+  transition: $transition;
+  margin-right: $icon-margin-right;
+  svg {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+}
+
+.input__suffix-icon {
+  margin-left: $icon-margin-right;
+  margin-right: 0;
+}
+
+.input {
+  border: none;
+  padding-left: 10px;
+  font-size: 1rem;
+  width: calc(100% - #{$icon-width});
+  outline: none;
+}
+
+.input--with-prefix,
+.input--with-suffix {
+  width: calc(100% - #{$icon-width} - #{$icon-margin-right});
+}
+
+.input--with-prefix-and-suffix {
+  width: calc(100% - 2 * (#{$icon-width} + #{$icon-margin-right}));
+}
