@@ -1,0 +1,29 @@
+@import 'sidebar';
+
+.border-pleo {
+  border-color: #fe4977;
+}
+.border-expense {
+  border-color: #bed7f5;
+}
+.custom-preview{
+  .dz-details{
+    display: none;
+  }
+  .dz-progress{
+    display: none;
+  }
+  .dz-error-messages{
+    display: none;
+  }
+  .dz-error-mark{
+    display: none;
+  }
+  .dz-success-mark{
+    display: none;
+  }
+
+  .dropzone .dz-preview{
+    margin: 0px;
+  }
+}
