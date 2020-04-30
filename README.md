@@ -1,3 +1,66 @@
+
+# Brief description
+- How long did it take?
+
+It took around 24h. I did it intermittently in my free time, with continuous work it might take less time.
+
+- Which part was the hardest to implement?
+  
+The hardest part was creating file uploading.
+
+- What functionalities are you most proud of?
+
+File uploading, reusable component, test coverage
+
+Used libraries: 
+  - React
+  - Redux
+  - Redux-saga
+  - reselect
+  - styled-components
+  - react-intl
+
+Changes in API: 
+- save category
+
+Additional implemented features 
+- drag and drop for receipt loading
+- receipt's category editing
+- currency filter based on loaded expenses currencies
+
+What I would like to improve:
+- add a full preview for receipts
+- increase test coverage
+- add routing for expense view and edit
+- add TS (I have basic knowledge, but would like to improve it)
+
+
+
+## Run app 
+
+open `./api` folder and run 
+```
+yarn install
+yarn start
+```
+or
+```
+npm install
+npm start
+```
+
+open `./client` folder in separate window and run 
+```
+yarn install
+yarn start
+```
+or 
+```
+npm install
+npm start
+```
+
+
 # Front-end challenge
 Implement an expenses list fetching all expenses from the provided API. Allow the user to add notes and upload receipt pictures to each expense.
 
